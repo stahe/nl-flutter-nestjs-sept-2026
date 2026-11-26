@@ -1,0 +1,746 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Een client-serverapplicatie [Flutter] / [NestJS]">
+      
+      
+        <meta name="author" content="Serge Tahé">
+      
+      
+        <link rel="canonical" href="https://stahe.github.io/nl-flutter-nestjs-sept-2026/hoofdstuk-6---conclusie-en-volgende-stappen.html">
+      
+      
+        <link rel="prev" href="hoofdstuk-5---de-flutter-applicatie-porteren-naar-mobiel-desktop-en-web.html">
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>7. Hoofdstuk 6 - Conclusie en volgende stappen - Een client-serverapplicatie [Flutter] / [NestJS]</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="stylesheets/focus.css">
+    
+      <link rel="stylesheet" href="stylesheets/bidi.css">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-EBZC3JVJNR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    var siteName = "Een client-serverapplicatie [Flutter] / [NestJS]";
+    gtag('config', 'G-EBZC3JVJNR', {
+        'page_title': siteName
+    });
+  </script>
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#7-hoofdstuk-6-conclusie-en-volgende-stappen" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="index.html" title="Een client-serverapplicatie [Flutter] / [NestJS]" class="md-header__button md-logo" aria-label="Een client-serverapplicatie [Flutter] / [NestJS]" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Een client-serverapplicatie [Flutter] / [NestJS]
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              7. Hoofdstuk 6 - Conclusie en volgende stappen
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="purple"  aria-label="Overschakelen naar donkere modus"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Overschakelen naar donkere modus" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="purple"  aria-label="Overschakelen naar lichte modus"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Overschakelen naar lichte modus" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://stahe.github.io/nl-flutter-nestjs-sept-2026" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="index.html" title="Een client-serverapplicatie [Flutter] / [NestJS]" class="md-nav__button md-logo" aria-label="Een client-serverapplicatie [Flutter] / [NestJS]" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Een client-serverapplicatie [Flutter] / [NestJS]
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://stahe.github.io/nl-flutter-nestjs-sept-2026" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Welkom
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="inleiding.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. Inleiding
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="hoofdstuk-1---de-werkomgeving-inrichten.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. Hoofdstuk 1 - De werkomgeving inrichten
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="hoofdstuk-2---de-nestjs-server-installeren.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. Hoofdstuk 2 - De [NestJS]-server installeren
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="hoofdstuk-3---inleiding-tot-flutter.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. Hoofdstuk 3 - Inleiding tot Flutter
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="hoofdstuk-4---de-flutter-client-voor-de-applicatie-rdvmedecins.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. Hoofdstuk 4 - De Flutter-client voor de applicatie RdvMedecins
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="hoofdstuk-5---de-flutter-applicatie-porteren-naar-mobiel-desktop-en-web.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. Hoofdstuk 5 - De Flutter-applicatie porteren naar mobiel, desktop en web
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. Hoofdstuk 6 - Conclusie en volgende stappen
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="hoofdstuk-6---conclusie-en-volgende-stappen.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. Hoofdstuk 6 - Conclusie en volgende stappen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#71-wat-is-gebouwd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.1. Wat is gebouwd
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#72-wat-buiten-beschouwing-blijft-of-nog-moet-worden-geport" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.2. Wat buiten beschouwing blijft of nog moet worden geport
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7.2. Wat buiten beschouwing blijft of nog moet worden geport">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#721-internationalisering-fransengels-aangepakt-in-dit-document" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.2.1. Internationalisering Frans/Engels: aangepakt in dit document
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#722-de-debug-modus-van-het-client-bewust-buiten-beschouwing-gelaten" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.2.2. De “debug”-modus van het client: bewust buiten beschouwing gelaten
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#723-kunstmatige-netwerkvertraging-uitgesteld" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.2.3. Kunstmatige netwerkvertraging: uitgesteld
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#73-een-opmerking-over-de-in-dit-document-gebruikte-methodiek" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3. Een opmerking over de in dit document gebruikte methodiek
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#74-om-er-nu-mee-verder-te-gaan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.4. Om er nu mee verder te gaan
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<p><span id="chapitre-6-conclusion-et-etapes-suivantes" name="chapitre-6-conclusion-et-etapes-suivantes" class="odt-bookmark-anchor"></span></p>
+<h1 id="7-hoofdstuk-6-conclusie-en-volgende-stappen">7. <span style="color: #2e74b5">Hoofdstuk 6 - Conclusie en volgende stappen</span></h1>
+<p><span id="ce-qui-a-ete-construit" name="ce-qui-a-ete-construit" class="odt-bookmark-anchor"></span></p>
+<h2 id="71-wat-is-gebouwd">7.1. <span style="color: #2e74b5">Wat is gebouwd</span></h2>
+<p>Dit document heeft de kernfunctionaliteit <strong>en authenticatie</strong> van de <em>[RdvMedecins]</em>-applicatie uit het oorspronkelijke document van 2014 aangepast aan actuele technologieën:</p>
+<ul>
+  <li>een complete <b>[NestJS]</b>-server (bij dit document geleverd, geïnstalleerd en getest in hoofdstuk 2, maar waarvan de code hier niet wordt behandeld) die dezelfde 11 JSON-bedrijfsroutes aanbiedt als de oorspronkelijke Spring 4-server, op dezelfde poort (8080), en die nu allemaal met een JWT-token zijn beveiligd;
+  </li>
+  <li>een <b>authenticatielaag</b> (<i>[@nestjs/passport] </i>+ <i>[@nestjs/jwt]</i>): authenticatie met login/wachtwoord (POST /login), een ondertekend token dat bij elk volgend verzoek wordt aangeboden en toegangsbeheer op basis van rollen (<i>[@Roles]</i>(&#x27;ADMIN&#x27;) + <i>[RolesGuard]</i>) op de twee routes die gegevens wijzigen;
+  </li>
+  <li>een <i>[Flutter]</i>-client (widgets <i>[Material]</i>, pakket <i><b>[provider]</b></i>) met dezelfde functies als het oorspronkelijke AngularJS 1.x-client (een arts en een datum kiezen, de agenda bekijken, een afspraak reserveren en annuleren), aangevuld met een aanmeldscherm, een persistente sessie (<i><b>[shared_preferences]</b></i>), een interface die is afgestemd op de rol van de aangemelde gebruiker (reserveringsknoppen verborgen voor de rol USER) en de mogelijkheid om de interface tussen Frans en Engels om te schakelen (<i><b>[TranslationsService]</b></i>, opnieuw geïmplementeerd zonder bibliotheek van derden).
+  </li>
+</ul>
+
+<p>De kern van de database is niet veranderd (dezelfde tabellen <em>[doctors/clients/slots/appointments]</em>, dezelfde constraints), afgezien van de toevoeging van de tabel <em>[users]</em>; ook de algemene gelaagde architectuur is niet veranderd, alleen de tools die haar implementeren zijn bijgewerkt.</p>
+<p>Twee bewuste verschillen met de authenticatie van het oorspronkelijke document, geïmplementeerd door de geleverde server (zie hoofdstuk 2): een <strong>JWT</strong>-token in plaats van de HTTP Basic-header die bij elk verzoek wordt verstuurd, en één enkele <em>[role]</em>-kolom per gebruiker in plaats van een veel-op-veelrelatie over drie tabellen. Een derde verschil, dit keer functioneel, is bewust gekozen voor deze port: de rol USER kan nu agenda’s bekijken (alleen-lezen), terwijl die rol in het origineel uitsluitend diende om een totale toegangsweigering te illustreren.</p>
+<p><span id="ce-qui-reste-hors-perimetre-ou-a-porter" name="ce-qui-reste-hors-perimetre-ou-a-porter" class="odt-bookmark-anchor"></span></p>
+<h2 id="72-wat-buiten-beschouwing-blijft-of-nog-moet-worden-geport">7.2. <span style="color: #2e74b5">Wat buiten beschouwing blijft of nog moet worden geport</span></h2>
+<p>Naast het bovenstaande behandelde het oorspronkelijke document nog drie onderwerpen: een daarvan is nu aangepakt, een ander is bewust weggelaten en het derde is uitgesteld tot een latere fase:</p>
+<p><span id="linternationalisation-francaisanglais---traitee-dans-ce-document" name="linternationalisation-francaisanglais---traitee-dans-ce-document" class="odt-bookmark-anchor"></span></p>
+<h3 id="721-internationalisering-fransengels-aangepakt-in-dit-document">7.2.1. <span style="color: #1f4d78">Internationalisering Frans/Engels: aangepakt in dit document</span></h3>
+<p>Het oorspronkelijke document stelde voor de interface om te schakelen tussen Frans en Engels met de bibliotheek <em>[angular-translate]</em>. Deze port implementeert deze functionaliteit met <strong><em>[TranslationsService]</em></strong> (zie hoofdstuk 4), speciaal voor dit document geschreven in plaats van aan een plug-in van derden gedelegeerd: de woordenboeken fr.json/en.json, ingebed in de applicatie (en niet langer door een webserver geserveerd), worden geladen via <strong><em>[rootBundle.loadString(...)]</em></strong>. Net als <em>[angular-translate]</em> en <em>[vue-i18n]</em> eerder, laat <strong><em>[TranslationsService]</em></strong> u direct van taal wisselen zonder de applicatie opnieuw te laden; een gedrag dat trouw is aan dat van het oorspronkelijke document.</p>
+<p><span id="le-mode-debug-du-client---deliberement-hors-perimetre" name="le-mode-debug-du-client---deliberement-hors-perimetre" class="odt-bookmark-anchor"></span></p>
+<h3 id="722-de-debug-modus-van-het-client-bewust-buiten-beschouwing-gelaten">7.2.2. <span style="color: #1f4d78">De “debug”-modus van het client: bewust buiten beschouwing gelaten</span></h3>
+<p>Het oorspronkelijke document bevatte een technische weergavemodus, activeerbaar vanuit de interface, die toegang gaf tot het ruwe model ($scope AngularJS 1.x) van de huidige view; een nuttige functie in 2014, toen de beschikbare ontwikkeltools voor het inspecteren van een AngularJS-applicatie nog beperkt waren. Deze port bouwt die functie niet opnieuw: de huidige <em>[Flutter]</em>-ontwikkeltools ([Flutter] DevTools, bruikbaar op alle drie de doelen: mobiel, desktop en web) bieden, los van de applicatie zelf, een veel completere inspectie van de widgetboom, hun toestand en hun eigenschappen dan een eigen, opnieuw in de interface geïntegreerd debugpaneel zou bieden. Zo’n paneel toevoegen zou neerkomen op het maken van een mindere versie van een tool die het ecosysteem al levert; deze beslissing is dus definitief en niet slechts een uitstel.</p>
+<p><span id="un-delai-reseau-artificiel---reporte" name="un-delai-reseau-artificiel---reporte" class="odt-bookmark-anchor"></span></p>
+<h3 id="723-kunstmatige-netwerkvertraging-uitgesteld">7.2.3. <span style="color: #1f4d78">Kunstmatige netwerkvertraging: uitgesteld</span></h3>
+<p>Het oorspronkelijke document maakte het mogelijk een kunstmatige vertraging in te stellen vóór elk serverantwoord, om het gedrag van de interface op een traag netwerk te observeren (laadindicatoren, tijdelijk uitschakelen van knoppen enzovoort). Deze functie heeft in deze port nog geen equivalent.</p>
+<p><span id="un-mot-sur-la-methode-suivie-dans-ce-document" name="un-mot-sur-la-methode-suivie-dans-ce-document" class="odt-bookmark-anchor"></span></p>
+<h2 id="73-een-opmerking-over-de-in-dit-document-gebruikte-methodiek">7.3. <span style="color: #2e74b5">Een opmerking over de in dit document gebruikte methodiek</span></h2>
+<p>Dit document is geschreven door systematisch uit te gaan van de werkelijk uitgevoerde code: elk serverpad is getest (inclusief authenticatiescenario’s: geslaagde/mislukte aanmelding, toegang zonder token, toegang met de verkeerde rol); het <em>[Flutter]</em>-client (hoofdstuk 4) is daarentegen regel voor regel nagelezen en geverifieerd in plaats van door Claude uitgevoerd: de omgeving die dit document heeft voortgebracht heeft geen toegang tot een machine waarop [Flutter] kan draaien (mobiel, desktop of web), anders dan bij de voorgaande webclients in deze cursus, die rechtstreeks in een geautomatiseerde [Chromium]-browser kunnen worden uitgevoerd. De schermafbeeldingen van het client in hoofdstuk 4 en 5 (web, Windows-desktop, Android-emulator) zijn door de auteur op zijn eigen machine gemaakt.</p>
+<p><span id="pour-aller-plus-loin-des-maintenant" name="pour-aller-plus-loin-des-maintenant" class="odt-bookmark-anchor"></span></p>
+<h2 id="74-om-er-nu-mee-verder-te-gaan">7.4. <span style="color: #2e74b5">Om er nu mee verder te gaan</span></h2>
+<p>In afwachting van de volgende stappen in deze port bieden de bij dit document geleverde server en het bijbehorende client een kant-en-klare basis waarmee u zelf kunt experimenteren:</p>
+<ul>
+  <li>een nieuwe arts of een nieuwe patiënt toevoegen (nu gebeurt dat alleen door het SQL-script aan te passen; een route /addDoctor, ook beveiligd met <i>[@Roles]</i>(&#x27;ADMIN&#x27;), zou een eerste oefening kunnen zijn);
+  </li>
+  <li>een derde rol toevoegen, of een gebruiker met meerdere rollen; een gelegenheid om heel concreet de kosten te beoordelen van het opgeven van de vereenvoudiging met één kolom die <i>[role] </i>biedt (zie hoofdstuk 2);
+  </li>
+  <li>de presentatie van het client aanpassen (kleuren, lay-out) zonder de server te wijzigen; een goede manier om te controleren of de gelaagde architectuur van het client werkt zoals bedoeld;
+  </li>
+  <li>Lees het README-bestand van elke map in de geleverde server en het geleverde client: elk bestand legt in zijn context de rol van de bijbehorende bestanden uit.
+  </li>
+</ul>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner">
+
+      <div>
+        <a href="https://stahe.github.io" target="_blank">
+          https://stahe.github.io
+        </a>
+        <br>
+        Deze tutorial, geschreven door de AI <strong>Claude</strong> van Anthropic en nagelezen door <strong>Serge Tahé</strong>, wordt aan het publiek ter beschikking gesteld onder de voorwaarden van de licentie
+        <em>Creative Commons Naamsvermelding – Niet-commercieel –
+        Gelijk delen 3.0 Unported</em>.
+
+      </div>
+
+    </div>
+  </div>
+
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.sections", "navigation.indexes", "navigation.expand", "toc.integrate", "navigation.top"], "search": "assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="javascripts/focus.js"></script>
+      
+    
+  </body>
+</html>

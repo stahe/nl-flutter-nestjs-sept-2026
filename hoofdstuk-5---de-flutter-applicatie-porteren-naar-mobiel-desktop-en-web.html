@@ -1,0 +1,915 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Een client-serverapplicatie [Flutter] / [NestJS]">
+      
+      
+        <meta name="author" content="Serge Tahé">
+      
+      
+        <link rel="canonical" href="https://stahe.github.io/nl-flutter-nestjs-sept-2026/hoofdstuk-5---de-flutter-applicatie-porteren-naar-mobiel-desktop-en-web.html">
+      
+      
+        <link rel="prev" href="hoofdstuk-4---de-flutter-client-voor-de-applicatie-rdvmedecins.html">
+      
+      
+        <link rel="next" href="hoofdstuk-6---conclusie-en-volgende-stappen.html">
+      
+      
+        
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>6. Hoofdstuk 5 - De Flutter-applicatie porteren naar mobiel, desktop en web - Een client-serverapplicatie [Flutter] / [NestJS]</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="stylesheets/focus.css">
+    
+      <link rel="stylesheet" href="stylesheets/bidi.css">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-EBZC3JVJNR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    var siteName = "Een client-serverapplicatie [Flutter] / [NestJS]";
+    gtag('config', 'G-EBZC3JVJNR', {
+        'page_title': siteName
+    });
+  </script>
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#6-hoofdstuk-5-de-flutter-applicatie-porteren-naar-mobiel-desktop-en-web" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="index.html" title="Een client-serverapplicatie [Flutter] / [NestJS]" class="md-header__button md-logo" aria-label="Een client-serverapplicatie [Flutter] / [NestJS]" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Een client-serverapplicatie [Flutter] / [NestJS]
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              6. Hoofdstuk 5 - De Flutter-applicatie porteren naar mobiel, desktop en web
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="purple"  aria-label="Overschakelen naar donkere modus"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Overschakelen naar donkere modus" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="purple"  aria-label="Overschakelen naar lichte modus"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Overschakelen naar lichte modus" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://stahe.github.io/nl-flutter-nestjs-sept-2026" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="index.html" title="Een client-serverapplicatie [Flutter] / [NestJS]" class="md-nav__button md-logo" aria-label="Een client-serverapplicatie [Flutter] / [NestJS]" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Een client-serverapplicatie [Flutter] / [NestJS]
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://stahe.github.io/nl-flutter-nestjs-sept-2026" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Welkom
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="inleiding.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. Inleiding
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="hoofdstuk-1---de-werkomgeving-inrichten.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. Hoofdstuk 1 - De werkomgeving inrichten
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="hoofdstuk-2---de-nestjs-server-installeren.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. Hoofdstuk 2 - De [NestJS]-server installeren
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="hoofdstuk-3---inleiding-tot-flutter.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. Hoofdstuk 3 - Inleiding tot Flutter
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="hoofdstuk-4---de-flutter-client-voor-de-applicatie-rdvmedecins.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. Hoofdstuk 4 - De Flutter-client voor de applicatie RdvMedecins
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. Hoofdstuk 5 - De Flutter-applicatie porteren naar mobiel, desktop en web
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="hoofdstuk-5---de-flutter-applicatie-porteren-naar-mobiel-desktop-en-web.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. Hoofdstuk 5 - De Flutter-applicatie porteren naar mobiel, desktop en web
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#61-een-broncode-meerdere-compilatiedoelen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1. Eén broncode, meerdere compilatiedoelen
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#62-webdoel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2. Webdoel
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#63-desktopdoel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.3. Desktopdoel
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#64-doelemulators" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.4. Doelemulators
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#65-mobiel-doel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.5. Mobiel doel
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6.5. Mobiel doel">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#651-de-netwerkvalkuil-voor-mobiel-localhost-verwijst-niet-langer-naar-de-ontwikkel-pc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.5.1. De netwerkvalkuil voor mobiel: localhost verwijst niet langer naar de ontwikkel-pc
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#652-twee-aanvullende-beperkingen-die-specifiek-zijn-voor-het-mobiele-apparaat" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.5.2. Twee aanvullende beperkingen die specifiek zijn voor het mobiele apparaat
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#653-een-smaller-scherm-de-valkuil-van-de-lay-out" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.5.3. Een smaller scherm: de valkuil van de lay-out
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#66-overzichtstabel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.6. Overzichtstabel
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#67-wat-niet-verandert-in-de-dart-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.7. Wat NIET verandert in de Dart-code
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="hoofdstuk-6---conclusie-en-volgende-stappen.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. Hoofdstuk 6 - Conclusie en volgende stappen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="6-hoofdstuk-5-de-flutter-applicatie-porteren-naar-mobiel-desktop-en-web">6. <span style="color: #2e74b5">Hoofdstuk 5 - De Flutter-applicatie porteren naar mobiel, desktop en web</span></h1>
+<h2 id="61-een-broncode-meerdere-compilatiedoelen">6.1. <span style="color: #2e74b5">Eén broncode, meerdere compilatiedoelen</span></h2>
+<p>Dit is de kern van dit hoofdstuk en de bestaansreden van deze cursusvariant: GEEN ENKELE regel van hoofdstuk 4 ([lib/], [pubspec.yaml], [assets/]) verandert, ongeacht het gekozen doel. De applicatie “porteren” komt hier neer op het kiezen van een ander COMPILATIECOMMANDO (<strong><em>[flutter run -d &lt;target&gt;] of [flutter build &lt;target&gt;]</em></strong>), zonder ooit widgets te schrijven, te dupliceren of aan te passen. Dat is heel anders dan wat een port zou hebben vereist met de tools die in de rest van deze cursus aan bod komen: een [Vue.js]/[React]/[Angular]-client draait alleen in een browser NATIEF; om het naar mobiel te porteren is een tool van DERDEN nodig (<em>[Cordova]/[Capacitor]</em>, in deze cursus niet gebruikt) die de client verpakt in een native omhulsel met in werkelijkheid een ingebouwde browser (een <strong><em>[WebView]</em></strong>): de code blijft ongewijzigd, maar het is NOG STEEDS geen native uitvoerbaar bestand, in tegenstelling tot wat [Flutter] hier voor mobiel en desktop produceert (zie hoofdstuk 3, “Wat Flutter niet is”).</p>
+<p>De zes doelen (<em>[Android]</em>, <em>[iOS]</em>, <em>[macOS]</em>, <em>[Windows]</em>, <em>[Linux]</em>, <em>[web]</em>) zijn STANDAARD ingeschakeld in elk project dat met <strong><em>[flutter create]</em></strong> is aangemaakt sinds <em>[Flutter 3]</em> (zie hoofdstuk 1); aan de projectkant is geen configuratie nodig om er een toe te voegen. De enige verschillen tussen de doelen zijn: de native compilatietools die op de ontwikkelmachine zijn geïnstalleerd (<em>[Xcode]</em>, <em>[Visual Studio]</em>, <em>[GTK]</em>...), het exacte commando dat wordt uitgevoerd en, alleen voor mobiel, een netwerkconfiguratiedetail dat verderop in dit hoofdstuk wordt beschreven.</p>
+<h2 id="62-webdoel">6.2. <span style="color: #2e74b5">Webdoel</span></h2>
+<p>Het doel dat al in hoofdstuk 2 is gebruikt (<strong><em>[flutter run -d chrome]</em></strong>). Twee commando’s volstaan:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
+<span class="normal"><a href="#__codelineno-0-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="n">flutter</span> <span class="n">run</span> <span class="n">-d</span> <span class="n">chrome</span>              <span class="c"># Ontwikkeling, met hot reload</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="n">flutter</span> <span class="n">build</span> <span class="n">web</span>                  <span class="c"># Productiebuild, in build/web/</span>
+</code></pre></div></td></tr></table></div>
+<p><strong><em>[flutter build web]</em></strong> genereert een zelfstandige map [build/web/] (<strong><em>[index.html]</em></strong>, gecompileerd <em>[JavaScript]</em> of <em>[WebAssembly]</em>, resources) die op ELKE statische webserver kan worden uitgerold ([Nginx], <em>[Apache]</em>, een eenvoudige <strong><em>[npx serve]</em></strong>...), precies zoals de map [dist/] die door <strong><em>[npm run build]</em></strong> aan de <em>[Vue.js]/[Vite]</em>-kant wordt gegenereerd. Deze build blijft een <em>[JavaScript]</em>-bestand dat door een browser wordt geserveerd: hij blijft dus afhankelijk van een [NestJS]-server die vanuit die browser BEREIKBAAR is, en dus van <strong><em>[app.enableCors()]</em></strong> (zie <strong><em>[src/main.ts]</em></strong> op de server); dat is al actief, zodat voor dit doel aan de serverkant geen wijzigingen nodig zijn.</p>
+<p>Eén aandachtspunt dat specifiek is voor dit doel: het veld “Server-URL” op het aanmeldscherm (zie <strong><em>[_ServerUrlField]</em></strong> in <strong><em>[lib/app.dart]</em></strong>, hoofdstuk 4) moet dan verwijzen naar een adres dat BEREIKBAAR is vanuit de browser waarin de applicatie draait; <strong><em>[http://localhost:8080]</em></strong> is acceptabel zolang de <em>[NestJS]</em>-server op DEZELFDE machine als de browser draait.</p>
+<h2 id="63-desktopdoel">6.3. <span style="color: #2e74b5">Desktopdoel</span></h2>
+<p>Drie besturingssystemen, drie sets native vereiste tools (zie hoofdstuk 1), maar <strong><em>[flutter]</em></strong>-commando’s die qua vorm identiek zijn:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
+<span class="normal"><a href="#__codelineno-1-2">2</a></span>
+<span class="normal"><a href="#__codelineno-1-3">3</a></span>
+<span class="normal"><a href="#__codelineno-1-4">4</a></span>
+<span class="normal"><a href="#__codelineno-1-5">5</a></span>
+<span class="normal"><a href="#__codelineno-1-6">6</a></span>
+<span class="normal"><a href="#__codelineno-1-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="n">flutter</span> <span class="n">run</span> <span class="n">-d</span> <span class="n">macos</span>               <span class="c"># macOS - vereist Xcode</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="n">flutter</span> <span class="n">run</span> <span class="n">-d</span> <span class="n">windows</span>              <span class="c"># Windows - vereist Visual Studio (C++ Desktop)</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="n">flutter</span> <span class="n">run</span> <span class="n">-d</span> <span class="n">linux</span>                <span class="c"># Linux - vereist de GTK-ontwikkelpakketten</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4"></a>
+<a id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="n">flutter</span> <span class="n">build</span> <span class="n">macos</span>                 <span class="c"># Productiebuild</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="n">flutter</span> <span class="n">build</span> <span class="n">windows</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7"></a><span class="n">flutter</span> <span class="n">build</span> <span class="n">linux</span>
+</code></pre></div></td></tr></table></div>
+<p>Elk <strong><em>[flutter build &lt;target&gt;]</em></strong>-commando produceert een ZELFSTANDIG native uitvoerbaar bestand (<strong><em>[.app]</em></strong> op macOS, <strong><em>[.exe]</em></strong> + bijbehorende bibliotheken op Windows, een <em>[ELF]</em>-binary op Linux), in <strong><em>[build/&lt;target&gt;/]</em></strong>: een uitvoerbaar bestand dat, anders dan de webbuild, in GEEN ENKELE browser en op GEEN ENKELE [WebView] draait: het is native code die rechtstreeks op het besturingssysteem draait, met een eigen venster en titelbalk, beheerd door <em>[Flutter]</em> zelf.</p>
+<p>Dit doel vereist GEEN enkele bijzondere netwerkconfiguratie: een desktopapplicatie draait op dezelfde machine als de gebruiker en benadert <strong><em>[http://localhost:8080]</em></strong> precies zoals elk ander programma dat op die machine is geïnstalleerd (met het veld “Server-URL” op het aanmeldscherm kunt u, net als bij de andere doelen, zo nodig naar een externe server verwijzen).</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-2-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-2-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-2-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-2-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-2-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-2-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-2-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-2-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-2-10">10</a></span>
+<span class="normal"><a href="#__codelineno-2-11">11</a></span>
+<span class="normal"><a href="#__codelineno-2-12">12</a></span>
+<span class="normal"><a href="#__codelineno-2-13">13</a></span>
+<span class="normal"><a href="#__codelineno-2-14">14</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a>PS C:\Data\st-2026\dev\flutter-nestjs-sept-2026\rdvmedecins_flutter_client&gt; flutter devices    
+<a id="__codelineno-2-2" name="__codelineno-2-2"></a>Found 4 connected devices:
+<a id="__codelineno-2-3" name="__codelineno-2-3"></a>  sdk gphone16k x86 64 (mobile) • emulator-5554 • android-x64    • Android 17 (API 37) (emulator)
+<a id="__codelineno-2-4" name="__codelineno-2-4"></a>  Windows (desktop)             • windows       • windows-x64    • Microsoft Windows [version
+<a id="__codelineno-2-5" name="__codelineno-2-5"></a>  10.0.26200.9457]
+<a id="__codelineno-2-6" name="__codelineno-2-6"></a>  Chrome (web)                  • chrome        • web-javascript • Google Chrome 153.0.8010.48
+<a id="__codelineno-2-7" name="__codelineno-2-7"></a>  Edge (web)                    • edge          • web-javascript • Microsoft Edge 153.0.4234.48
+<a id="__codelineno-2-8" name="__codelineno-2-8"></a>
+<a id="__codelineno-2-9" name="__codelineno-2-9"></a>Run "flutter emulators" to list and start any available device emulators.
+<a id="__codelineno-2-10" name="__codelineno-2-10"></a>
+<a id="__codelineno-2-11" name="__codelineno-2-11"></a>If you expected another device to be detected, please run "flutter doctor" to diagnose potential issues. You
+<a id="__codelineno-2-12" name="__codelineno-2-12"></a>may also try increasing the time to wait for connected devices with the "--device-timeout" flag. Visit
+<a id="__codelineno-2-13" name="__codelineno-2-13"></a>https://flutter.dev/setup/ for troubleshooting tips.
+<a id="__codelineno-2-14" name="__codelineno-2-14"></a>PS C:\Data\st-2026\dev\flutter-nestjs-sept-2026\rdvmedecins_flutter_client&gt; flutter run -d windows
+</code></pre></div></td></tr></table></div>
+<p>Dit levert het volgende resultaat op:</p>
+<p><img src="images/1000000000000527000003C6501389C7.png" width="396" height="290" style="width:10.47cm;height:7.669cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000527000003C6501389C7.png" /></p>
+<p>Het scherm hierboven is niet afkomstig uit een browser, maar uit een Windows-applicatie. Om dit te laten werken, moeten bepaalde tools beschikbaar zijn:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span>
+<span class="normal"><a href="#__codelineno-3-2">2</a></span>
+<span class="normal"><a href="#__codelineno-3-3">3</a></span>
+<span class="normal"><a href="#__codelineno-3-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a>[√] Visual Studio - develop Windows apps (Visual Studio Build Tools 2026 18.9.0) [221ms]
+<a id="__codelineno-3-2" name="__codelineno-3-2"></a>    • Visual Studio at C:\Program Files (x86)\Microsoft Visual Studio\18\BuildTools
+<a id="__codelineno-3-3" name="__codelineno-3-3"></a>    • Visual Studio Build Tools 2026 version 18.9.12105.275
+<a id="__codelineno-3-4" name="__codelineno-3-4"></a>    • Windows 10 SDK version 10.0.26100.0
+</code></pre></div></td></tr></table></div>
+<ul>
+  <li>Regel 2: <a href="https://visualstudio.microsoft.com/fr/vs/community/"><u><span style="color: #0563c1">Visual Studio</span></u></a> moet zijn geïnstalleerd;
+  </li>
+</ul>
+
+<p>Typ het volgende commando om een duidelijk beeld te krijgen van wat er in uw Flutter-project ontbreekt:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>flutter doctor -v
+</code></pre></div>
+<h2 id="64-doelemulators">6.4. <span style="color: #2e74b5">Doelemulators</span></h2>
+<p>De Flutter-app is getest op een Android-emulator:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-5-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-5-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-5-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-5-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-5-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-5-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-5-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-5-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-5-10">10</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a>PS C:\Data\st-2026\dev\flutter-nestjs-sept-2026\rdvmedecins_flutter_client&gt; flutter devices       
+<a id="__codelineno-5-2" name="__codelineno-5-2"></a>Found 4 connected devices:
+<a id="__codelineno-5-3" name="__codelineno-5-3"></a>  sdk gphone16k x86 64 (mobile) • emulator-5554 • android-x64    • Android 17 (API 37) (emulator)
+<a id="__codelineno-5-4" name="__codelineno-5-4"></a>  Windows (desktop)             • windows       • windows-x64    • Microsoft Windows [version
+<a id="__codelineno-5-5" name="__codelineno-5-5"></a>  10.0.26200.9457]
+<a id="__codelineno-5-6" name="__codelineno-5-6"></a>  Chrome (web)                  • chrome        • web-javascript • Google Chrome 153.0.8010.48
+<a id="__codelineno-5-7" name="__codelineno-5-7"></a>  Edge (web)                    • edge          • web-javascript • Microsoft Edge 153.0.4234.48
+<a id="__codelineno-5-8" name="__codelineno-5-8"></a>
+<a id="__codelineno-5-9" name="__codelineno-5-9"></a>...
+<a id="__codelineno-5-10" name="__codelineno-5-10"></a>PS C:\Data\st-2026\dev\flutter-nestjs-sept-2026\rdvmedecins_flutter_client&gt; flutter run -d emulator-554
+</code></pre></div></td></tr></table></div>
+<p>Het resultaat in de emulator:</p>
+<p><img src="images/100000000000040300000483354A3B5D.png" width="308" height="347" style="width:8.149cm;height:9.17cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000040300000483354A3B5D.png" /></p>
+<ul>
+  <li>Let op de URL in [1];
+  </li>
+</ul>
+
+<p>Aanmelden met admin / admin levert het volgende resultaat op:</p>
+<p><img src="images/100000000000043A000004649E16B0B6.png" width="325" height="337" style="width:8.59cm;height:8.92cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000043A000004649E16B0B6.png" /></p>
+<p>Vul het formulier in en verstuur het:</p>
+<p><img src="images/100000000000042A00000677B248F14B.png" width="320" height="497" style="width:8.46cm;height:13.139cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000042A00000677B248F14B.png" /></p>
+<p>Hierboven ziet u het tijdvak dat we met de webapp hebben gereserveerd.</p>
+<h2 id="65-mobiel-doel">6.5. <span style="color: #2e74b5">Mobiel doel</span></h2>
+<p><strong>Opmerking</strong>: de reviewer heeft dit gedeelte niet getest.</p>
+<p>Dit is het gebied dat de meeste aandacht vereist, vanwege een detail dat specifiek is voor het netwerk van de emulator/simulator.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1">1</a></span>
+<span class="normal"><a href="#__codelineno-6-2">2</a></span>
+<span class="normal"><a href="#__codelineno-6-3">3</a></span>
+<span class="normal"><a href="#__codelineno-6-4">4</a></span>
+<span class="normal"><a href="#__codelineno-6-5">5</a></span>
+<span class="normal"><a href="#__codelineno-6-6">6</a></span>
+<span class="normal"><a href="#__codelineno-6-7">7</a></span>
+<span class="normal"><a href="#__codelineno-6-8">8</a></span>
+<span class="normal"><a href="#__codelineno-6-9">9</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="n">flutter</span> <span class="n">emulators</span>                   <span class="c"># Toont de geconfigureerde Android-emulators</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2"></a><span class="n">flutter</span> <span class="n">emulators</span> <span class="p">-</span><span class="n">-launch</span> <span class="p">&lt;</span><span class="n">id</span><span class="p">&gt;</span>     <span class="c"># Start een Android-emulator</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3"></a><span class="n">open</span> <span class="n">-a</span> <span class="n">Simulator</span>                   <span class="c"># Start een iOS-simulator (alleen macOS)</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4"></a>
+<a id="__codelineno-6-5" name="__codelineno-6-5"></a><span class="n">flutter</span> <span class="n">run</span> <span class="n">-d</span> <span class="p">&lt;</span><span class="n">emulator</span><span class="o">-or</span><span class="n">-device-id</span><span class="p">&gt;</span>
+<a id="__codelineno-6-6" name="__codelineno-6-6"></a>
+<a id="__codelineno-6-7" name="__codelineno-6-7"></a><span class="n">flutter</span> <span class="n">build</span> <span class="n">apk</span>                   <span class="c"># Android-build (.apk), of:</span>
+<a id="__codelineno-6-8" name="__codelineno-6-8"></a><span class="n">flutter</span> <span class="n">build</span> <span class="n">appbundle</span>             <span class="c"># Android-build voor de Play Store (.aab)</span>
+<a id="__codelineno-6-9" name="__codelineno-6-9"></a><span class="n">flutter</span> <span class="n">build</span> <span class="n">ios</span>                   <span class="c"># iOS-build - vereist macOS + Xcode + een Apple-ontwikkelaarsaccount voor een fysiek apparaat</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="651-de-netwerkvalkuil-voor-mobiel-localhost-verwijst-niet-langer-naar-de-ontwikkel-pc">6.5.1. <span style="color: #1f4d78">De netwerkvalkuil voor mobiel: <code>localhost</code> verwijst niet langer naar de ontwikkel-<code>pc</code></span></h3>
+<p>Dit is HET detail dat u voor dit doel moet kennen, los van <em>[Flutter]</em> zelf: <strong><em>[localhost]</em></strong> (of <strong><em>[127.0.0.1]</em></strong>) verwijst in het veld “Server-URL” van het aanmeldscherm ALTIJD naar de machine die de code uitvoert, en een mobiele emulator/simulator is een VIRTUELE machine die LOS STAAT van de ontwikkelmachine waarop de server (<em>[NestJS]</em>) draait, ook al lijken de twee “op dezelfde computer te staan”.</p>
+<ul>
+  <li><i>[Android]</i>-emulator (aangemaakt met <i>[Android Studio]</i>): gebruik <i><b>[http://10.0.2.2:8080]</b></i>, een speciaal adres dat eigen is aan de officiële <i>[Android]</i>-emulator en dat automatisch doorverwijst naar <i><b>[localhost] </b></i>van de hostmachine (de ontwikkel-pc).
+  </li>
+  <li><i>[iOS]</i>-simulator (alleen macOS): <i><b>[http://localhost:8080] werkt rechtstreeks, omdat de [iOS]-simulator</b></i> het netwerk van de hostmachine deelt (anders dan de <i>[Android]</i>-emulator).
+  </li>
+  <li>Fysiek apparaat (<i>[Android] </i>of <i>[iOS]</i>, verbonden met hetzelfde wifinetwerk als de ontwikkel-pc): gebruik het LOKALE [IP]-adres van deze pc op dit netwerk (bijvoorbeeld <i><b>[http://192.168.1.42:8080]</b></i>), nooit <i><b>[localhost] </b></i>of <i><b>[10.0.2.2]</b></i>, aangezien beide in dit geval naar het mobiele apparaat zelf verwijzen.
+  </li>
+</ul>
+
+<h3 id="652-twee-aanvullende-beperkingen-die-specifiek-zijn-voor-het-mobiele-apparaat">6.5.2. <span style="color: #1f4d78">Twee aanvullende beperkingen die specifiek zijn voor het mobiele apparaat</span></h3>
+<ul>
+  <li><i>[Android] </i>(vanaf API 28) blokkeert standaard al het CLEARTEXT-[HTTP]-verkeer (niet versleuteld met [https://]); aangezien de <i>server </i>van deze cursus in eenvoudige modus op <i>[HTTP]</i> luistert, moet een [Android]-applicatie die KLAAR IS VOOR PRODUCTIE een expliciete uitzondering declareren (<i><b>[android:usesCleartextTraffic=&quot;true&quot;] </b></i>in het gegenereerde [Android]-manifest, of een fijnmaziger netwerkbeveiligingsconfiguratie); dit is een native configuratie-instelling in <i><b>[android/]</b></i>, buiten de <i>[Dart]</i>-code die in dit document wordt gepresenteerd.
+  </li>
+  <li><i>[iOS] </i>hanteert een vergelijkbaar beleid, <i><b>[App Transport Security]</b></i> (<i>[ATS]</i>), dat standaard ook onversleuteld <i>[HTTP] </i>blokkeert; een gelijkwaardige uitzondering wordt gedeclareerd in <i><b>[ios/Runner/Info.plist]</b></i> (<i><b>[NSAppTransportSecurity]</b></i>, <i><b>[NSAllowsArbitraryLoads]</b></i>, of, specifieker, een uitzondering die uitsluitend op het domein van de ontwikkelserver is gericht).
+  </li>
+</ul>
+
+<p>Deze twee instellingen gelden ALLEEN voor ontwikkeling en demonstratie met een onversleutelde <em>[HTTP]</em>-server, zoals die in deze cursus wordt gebruikt; een echte productie-uitrol zou de <em>[NestJS]</em>-server zelf in <strong><em>[https://]</em></strong> beschikbaar stellen (bijvoorbeeld achter een <em>[reverse proxy]</em> zoals <em>[Nginx]</em>), waardoor deze twee uitzonderingen overbodig worden.</p>
+<h3 id="653-een-smaller-scherm-de-valkuil-van-de-lay-out">6.5.3. <span style="color: #1f4d78">Een smaller scherm: de valkuil van de lay-out</span></h3>
+<p>Een laatste verschil dat specifiek is voor mobiele apparaten heeft niets met het netwerk te maken: een telefoon in portretstand is slechts ongeveer 360 pixels breed (in logische pixels van <em>[Flutter]</em>), tegenover enkele honderden meer in een browser- of desktopvenster. Een scherm dat voor een groot beeldscherm is ontworpen, kan op een telefoon dan ook onbruikbaar worden: dat gebeurde met de eerste versie van het client van dit document, getest op een <em>[Android]</em>-emulator. De keuzebalk voor arts, dag en knop (<em>[doctor_day_picker.dart]</em>) plaatste drie velden naast elkaar in één <strong><em>[Row]</em></strong> en de titelbalk (<em>[app.dart]</em>) toonde alles tegelijk: de emulator moest in landschapsstand worden gezet om alles te zien. Hoofdstuk 4 toont de oplossing. Hieruit volgen twee regels:</p>
+<ul>
+  <li>Ga nooit uit van een bepaalde breedte. Controleer om een lay-out te kiezen de werkelijk beschikbare breedte, ofwel op een specifieke plek in de boom met <i><b>[LayoutBuilder]</b></i> (<i><b>[constraints.maxWidth]</b></i>), ofwel voor het hele scherm met <i><b>[MediaQuery.sizeOf(context).width]</b></i>, en kies dan <i><b>[Row] </b></i>(breed scherm) of <i><b>[Column] </b></i>(smal scherm).
+  </li>
+  <li>Test vroeg op een smal scherm: gebruik de emulator in portretstand of een <i>[Chrome]</i>-venster dat u smaller maakt. In debugmodus meldt <i>[Flutter] </i>dat de inhoud te breed is met een geel-zwarte banner met de tekst “RIGHT OVERFLOWED BY … PIXELS” in de applicatie en een bericht in de console.
+  </li>
+</ul>
+
+<p>Dit is niet in tegenspraak met de volgende constatering: de lay-out past zich aan op basis van de GROOTTE van het scherm, nooit op basis van het platform; nergens komt <strong><em>[if (kIsWeb)]</em></strong> voor. Een browser- of desktopvenster smaller maken activeert precies dezelfde “smalle” lay-out als een telefoon.</p>
+<h2 id="66-overzichtstabel">6.6. <span style="color: #2e74b5">Overzichtstabel</span></h2>
+<ul>
+  <li><i>[web]</i> — <i><b>[flutter run -d chrome] </b></i>/ <i><b>[flutter build web] </b></i>— gecompileerd naar <i>[JavaScript]/[WebAssembly]</i>, uitgevoerd door een browser — Server-URL: <i><b>[localhost] </b></i>(dezelfde machine).
+  </li>
+  <li><i>[desktop] </i>(macOS/Windows/Linux) — <i><b>[flutter run -d &lt;os&gt;] </b></i>/ <i><b>[flutter build &lt;os&gt;] </b></i>— native [AOT]-compilatie, zelfstandig uitvoerbaar bestand — Server-URL: <i><b>[localhost] </b></i>(dezelfde machine).
+  </li>
+  <li><i>[mobile]</i> (Android-emulator) — <i><b>[flutter run] </b></i>— native [AOT]-compilatie<i> </i>— Server-URL: <i><b>[10.0.2.2] </b></i>(speciaal adres voor de emulator).
+  </li>
+  <li><i>[mobile] </i>(iOS-simulator) — <i><b>[flutter run] </b></i>— native [AOT]-compilatie<i> </i>— Server-URL: <i><b>[localhost] </b></i>(netwerk gedeeld met de host).
+  </li>
+  <li><i>[mobile] </i>(fysiek apparaat) — <i><b>[flutter run] </b></i>— native [AOT]-compilatie<i> </i>— Server-URL: lokaal [IP]-adres van de ontwikkel-pc, + uitzondering <i>[cleartext]/[ATS]</i>.
+  </li>
+</ul>
+
+<h2 id="67-wat-niet-verandert-in-de-dart-code">6.7. <span style="color: #2e74b5">Wat NIET verandert in de Dart-code</span></h2>
+<p><strong><em>Ter</em></strong> afsluiting van dit hoofdstuk is het goed te benadrukken wat NIET hoefde te worden geschreven of aangepast om deze drie doelfamilies te bedienen: in hoofdstuk 4 komt geen enkele voorwaarde [if (kIsWeb) { ... } else { ... }] voor, geen apart bestand [_mobile.dart]/[_web.dart] en geen extra abstractiebibliotheken. De paar keuzen die al in hoofdstuk 4 zijn gemaakt, volstaan op zichzelf om deze code over de drie doelfamilies draagbaar te maken: <strong><em>[shared_preferences]</em></strong> (in plaats van <strong><em>[localStorage]</em></strong>, dat browserspecifiek is) voor persistentie, <strong><em>[rootBundle.loadString(...)]</em></strong> (in plaats van een <strong><em>[fetch]</em></strong> naar een webserver) voor de ingebedde vertaalwoordenboeken en het pakket <strong><em>[http]</em></strong> (in plaats van een browserspecifieke API) voor het netwerkverkeer. Dit is precies wat de inleiding van dit document beloofde: <strong><em>[a single Flutter codebase is enough to build a mobile app, a desktop app and a web app]</em></strong>.</p>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner">
+
+      <div>
+        <a href="https://stahe.github.io" target="_blank">
+          https://stahe.github.io
+        </a>
+        <br>
+        Deze tutorial, geschreven door de AI <strong>Claude</strong> van Anthropic en nagelezen door <strong>Serge Tahé</strong>, wordt aan het publiek ter beschikking gesteld onder de voorwaarden van de licentie
+        <em>Creative Commons Naamsvermelding – Niet-commercieel –
+        Gelijk delen 3.0 Unported</em>.
+
+      </div>
+
+    </div>
+  </div>
+
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.sections", "navigation.indexes", "navigation.expand", "toc.integrate", "navigation.top"], "search": "assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="javascripts/focus.js"></script>
+      
+    
+  </body>
+</html>

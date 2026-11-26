@@ -1,0 +1,795 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Een client-serverapplicatie [Flutter] / [NestJS]">
+      
+      
+        <meta name="author" content="Serge Tahé">
+      
+      
+        <link rel="canonical" href="https://stahe.github.io/nl-flutter-nestjs-sept-2026/hoofdstuk-3---inleiding-tot-flutter.html">
+      
+      
+        <link rel="prev" href="hoofdstuk-2---de-nestjs-server-installeren.html">
+      
+      
+        <link rel="next" href="hoofdstuk-4---de-flutter-client-voor-de-applicatie-rdvmedecins.html">
+      
+      
+        
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>4. Hoofdstuk 3 - Inleiding tot Flutter - Een client-serverapplicatie [Flutter] / [NestJS]</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="stylesheets/focus.css">
+    
+      <link rel="stylesheet" href="stylesheets/bidi.css">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-EBZC3JVJNR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    var siteName = "Een client-serverapplicatie [Flutter] / [NestJS]";
+    gtag('config', 'G-EBZC3JVJNR', {
+        'page_title': siteName
+    });
+  </script>
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#4-hoofdstuk-3-inleiding-tot-flutter" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="index.html" title="Een client-serverapplicatie [Flutter] / [NestJS]" class="md-header__button md-logo" aria-label="Een client-serverapplicatie [Flutter] / [NestJS]" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Een client-serverapplicatie [Flutter] / [NestJS]
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              4. Hoofdstuk 3 - Inleiding tot Flutter
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="purple"  aria-label="Overschakelen naar donkere modus"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Overschakelen naar donkere modus" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="purple"  aria-label="Overschakelen naar lichte modus"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Overschakelen naar lichte modus" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://stahe.github.io/nl-flutter-nestjs-sept-2026" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="index.html" title="Een client-serverapplicatie [Flutter] / [NestJS]" class="md-nav__button md-logo" aria-label="Een client-serverapplicatie [Flutter] / [NestJS]" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Een client-serverapplicatie [Flutter] / [NestJS]
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://stahe.github.io/nl-flutter-nestjs-sept-2026" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Welkom
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="inleiding.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. Inleiding
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="hoofdstuk-1---de-werkomgeving-inrichten.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. Hoofdstuk 1 - De werkomgeving inrichten
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="hoofdstuk-2---de-nestjs-server-installeren.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. Hoofdstuk 2 - De [NestJS]-server installeren
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. Hoofdstuk 3 - Inleiding tot Flutter
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="hoofdstuk-3---inleiding-tot-flutter.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. Hoofdstuk 3 - Inleiding tot Flutter
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#41-bronnen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1. Bronnen
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#42-wat-flutter-niet-is" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2. Wat Flutter niet is
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#43-het-ontwikkelmodel-van-flutter-alles-is-een-widget" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3. Het ontwikkelmodel van Flutter: alles is een widget
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#44-statelesswidget-en-statefulwidget-terwijl-vuejs-geen-onderscheid-vereist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.4. StatelessWidget en StatefulWidget: terwijl Vue.js geen onderscheid vereist
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#45-toestand-delen-tussen-widgets-provider-het-equivalent-van-provideinject" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.5. Toestand delen tussen widgets: provider, het equivalent van provide/inject
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#46-geen-aparte-templatetaal-voorwaardelijke-weergave-en-lijsten" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.6. Geen aparte templatetaal: voorwaardelijke weergave en lijsten
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#47-dart-een-nauwe-verwant-van-typescript-niet-van-javascript" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.7. Dart: een nauwe verwant van TypeScript, niet van JavaScript
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#48-een-eerste-minimaal-voorbeeld" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.8. Een eerste minimaal voorbeeld
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#49-samenvatting-angular-react-vuejs-flutter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.9. Samenvatting: Angular -&gt; React -&gt; Vue.js -&gt; Flutter
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="hoofdstuk-4---de-flutter-client-voor-de-applicatie-rdvmedecins.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. Hoofdstuk 4 - De Flutter-client voor de applicatie RdvMedecins
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="hoofdstuk-5---de-flutter-applicatie-porteren-naar-mobiel-desktop-en-web.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. Hoofdstuk 5 - De Flutter-applicatie porteren naar mobiel, desktop en web
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="hoofdstuk-6---conclusie-en-volgende-stappen.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. Hoofdstuk 6 - Conclusie en volgende stappen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="4-hoofdstuk-3-inleiding-tot-flutter">4. <span style="color: #2e74b5">Hoofdstuk 3 - Inleiding tot Flutter</span></h1>
+<h2 id="41-bronnen">4.1. <span style="color: #2e74b5">Bronnen</span></h2>
+<p>Officiële documentatie: https://docs.flutter.dev, met name de pagina&#x27;s „What is Flutter?”, „Introduction to widgets” en „State management”. <em>[Dart]</em>-taal: https://dart.dev/language</p>
+<h2 id="42-wat-flutter-niet-is">4.2. <span style="color: #2e74b5">Wat Flutter niet is</span></h2>
+<p>Dit is het belangrijkste uitgangspunt van dit hoofdstuk, omdat het sterk verschilt van de drie eerdere versies van deze cursus. <em>[Angular]</em>, <em>[React]</em> en <em>[Vue.js]</em> produceren allemaal GECOMPILEERDE <strong><em>[JavaScript]/[TypeScript]</em></strong> die wordt uitgevoerd door de <em>[JavaScript]</em>-engine die al in een browser aanwezig is; deze engine verzorgt al het weergavewerk, via <em>[DOM]</em> en <em>[CSS]</em>. Een tool als <em>[Cordova]/[Capacitor]</em> (niet gebruikt in deze cursus) maakt het weliswaar mogelijk zo&#x27;n webclient in een mobiele schil te verpakken, maar de client blijft dan draaien in een ingebouwde browser (een <strong><em>[WebView]</em></strong>), nooit native.</p>
+<p><em>[Flutter]</em> heeft hier niets mee te maken. De <em>[Dart]</em>-code in dit document wordt, zowel voor mobiel als voor desktop, gecompileerd naar NATIVE machinecode (compilatie <strong><em>[AOT]</em></strong>, <em>[Ahead-Of-Time]</em>, dezelfde compilatiefamilie als een C++- of Rust-programma), die rechtstreeks door het doelbesturingssysteem kan worden uitgevoerd; er is GEEN [JavaScript]-interpreter of [WebView] van welke aard dan ook voor nodig. <em>[Flutter]</em> bevat een eigen grafische renderengine (<strong><em>[Impeller]</em></strong>, die op mobiele apparaten <strong><em>[Skia]</em></strong> als standaardengine heeft vervangen): de applicatie tekent elke pixel zelf, beeld voor beeld, in plaats van de weergave uit te besteden aan de native widgets van het besturingssysteem (in tegenstelling tot <em>[React Native]</em>, dat in deze cursus niet wordt gebruikt en dat juist de echte interfacecomponenten van <em>[Android]/[iOS]</em> aanstuurt). Deze architectuurkeuze maakt het mogelijk dat <em>[Flutter]</em> in de drie omgevingen waarop dit document zich richt een identieke interface weergeeft: er zijn geen native componenten van het besturingssysteem waarvan het uiterlijk van platform tot platform kan verschillen.</p>
+<p><em>Op</em> het <em>[web]</em>-doelplatform is er uiteraard geen compilatie naar native machinecode: <strong><em>[flutter build web]</em></strong> compileert de <em>[Dart]</em>-code naar <strong><em>[JavaScript]</em></strong> (of naar <strong><em>[WebAssembly]</em></strong>, een recenter doel), dat door de browser wordt uitgevoerd; maar deze gegenereerde <em>[JavaScript]</em> manipuleert de [DOM] of [HTML] NIET zoals <em>[Vue.js]</em> dat doet: ook deze code tekent rechtstreeks op één enkel [&lt;canvas&gt;]-element (of via automatisch gegenereerde [HTML]-elementen, afhankelijk van de gekozen rendermodus) en reproduceert zo hetzelfde [Flutter]-uiterlijk als op mobiel en desktop, in plaats van te steunen op met <em>[HTML]</em>-elementen die in <em>[CSS]</em> zijn opgemaakt.</p>
+<h2 id="43-het-ontwikkelmodel-van-flutter-alles-is-een-widget">4.3. <span style="color: #2e74b5">Het ontwikkelmodel van Flutter: alles is een widget</span></h2>
+<p><em>[Angular]</em>, <em>[React]</em> en <em>[Vue.js]: alle drie</em> scheiden de LOGICA van een component (<em>[TypeScript]</em>) van de PRESENTATIE ervan (een <em>[HTML]</em>-template, die afhankelijk van het framework gescheiden of geïntegreerd kan zijn; zie Hoofdstuk 4 van het document over <em>[Vue.js]</em> in deze cursus, „Componenten: [.vue]-bestanden en [Composition API]”). <em>[Flutter]</em> heft dit onderscheid volledig op: ALLES is in een <em>[Flutter]</em>-interface een <strong><em>[Widget]</em></strong>: een knop, tekst, marge, uitlijning en achtergrondkleur zijn elk een widget, en een complete interface is niets meer dan een BOOM van widgets die in elkaar genest zijn, beschreven met gewone <em>[Dart]</em>-code (de methode <strong><em>[build(BuildContext context)]</em></strong>) in plaats van met een aparte templatetaal; in dit opzicht zet <em>[Flutter]</em> de keuze van <em>[React]</em> (<em>[JSX]</em>, vanuit <em>[JavaScript],</em> dat de interface beschrijft) nog verder door: terwijl <em>[JSX]</em> een opmaaktaal blijft die met [JavaScript] is GEMENGD, <strong><em>[build(...)]</em></strong> retourneert eenvoudig een [Dart]-EXPRESSIE: geneste constructoraanroepen (<strong><em>[Scaffold(appBar: ..., body: Column(children: [...]))]</em></strong>) zonder extra syntaxis die u hoeft te leren.</p>
+<h2 id="44-statelesswidget-en-statefulwidget-terwijl-vuejs-geen-onderscheid-vereist">4.4. <span style="color: #2e74b5">StatelessWidget en StatefulWidget: terwijl Vue.js geen onderscheid vereist</span></h2>
+<p><em>[Vue.js]</em> (net als <em>[React]</em> en <em>[Angular]</em> eerder in deze cursus) maakt geen structureel onderscheid tussen een component met een veranderlijke toestand en een component zonder: <strong><em>[ref(...)]</em></strong> kan binnen elke <strong><em>[&lt;script setup&gt;]</em></strong> al dan niet worden aangeroepen, zonder dat er iets verandert aan de declaratie van de component zelf. <em>[Flutter] LEGT</em> dit onderscheid al bij de klassedeclaratie OP: een <strong><em>[StatelessWidget]</em></strong> (er verandert nooit iets na de constructie; zie <strong><em>[ScheduleView]</em></strong> en <strong><em>[LoginPage]</em></strong> in Hoofdstuk 4) voert de methode [build(...)] ALLEEN opnieuw uit wanneer de parameters ervan veranderen; een [StatefulWidget] wordt gekoppeld aan een aparte klasse [State&lt;T&gt;] (zie <strong><em>[_LoginFormState]</em></strong>, <strong><em>[_AppRootState]</em></strong>..., Hoofdstuk 4), die de veranderlijke toestand bevat, en de methode <strong><em>[setState(() { ... })]</em></strong>: de EXPLICIETE aanroep die een nieuwe weergave activeert, terwijl <strong><em>[reactive(...)] aan</em></strong> de <em>[Vue.js]</em>-kant elke schrijfactie op een eigenschap automatisch detecteert. Deze scheiding in twee klassen (Widget/State) is een rechtstreeks gevolg van een bewuste ontwerpkeuze in <em>[Flutter]</em>: een <strong><em>[Widget]</em></strong>-object is ONVERANDERLIJK (bij elke weergave opnieuw opgebouwd, als een eenvoudig configuratieobject), terwijl de bijbehorende <strong><em>[State]</em></strong> van de ene weergave naar de volgende BLIJFT BESTAAN.</p>
+<h2 id="45-toestand-delen-tussen-widgets-provider-het-equivalent-van-provideinject">4.5. <span style="color: #2e74b5">Toestand delen tussen widgets: provider, het equivalent van provide/inject</span></h2>
+<p><em>[Vue.js]</em> deelt toestand tussen verafgelegen componenten via het paar <strong><em>[provide]/[inject]</em></strong>; <em>[React]</em> gebruikt een <strong><em>[Context]</em></strong>; <em>[Angular] gebruikt een injecteerbare singleton-service</em>. <em>[Flutter]</em> heeft geen van deze mechanismen ingebouwd in het framework zelf: hiervoor dient het pakket van derden <strong><em>[provider]</em></strong> (zie <strong><em>[pubspec.yaml]</em></strong>, Hoofdstuk 4), dat in het <em>[Flutter]</em>-ecosysteem vrijwel onmisbaar is. Het principe: een klasse <strong><em>[ChangeNotifier]</em></strong> (een gewone <em>[Dart]</em>-klasse die haar luisteraars via <strong><em>[notifyListeners()]</em></strong> van een wijziging op de hoogte kan stellen) wordt beschikbaar gesteld aan een hele deelboom van widgets door een <strong><em>[ChangeNotifierProvider]</em></strong> die aan de wortel is geplaatst (zie <strong><em>[MultiProvider]</em></strong> in <strong><em>[lib/main.dart]</em></strong>, wat gelijkwaardig is aan de aanroepen van <strong><em>[app.provide(key, value)]</em></strong> aan de <em>[Vue.js]</em>-kant); elke afstammelingwidget leest de klasse vervolgens opnieuw met <strong><em>[context.watch&lt;MyService&gt;()]</em></strong> (abonneert zich op toekomstige wijzigingen; het equivalent van <strong><em>[useXxx()]</em></strong> aan de <em>[Vue.js]</em>-kant) of <strong><em>[context.read&lt;MyService&gt;()]</em></strong> (eenmalig lezen, zonder opnieuw te abonneren; een onderscheid dat <em>[Vue.js]</em> niet hoeft te maken).</p>
+<p>Belangrijk verschil met <strong><em>[reactive(...)]</em></strong>: een <strong><em>[ChangeNotifier]</em></strong> detecteert NIETS automatisch. <strong><em>[reactive(...)]</em></strong> verpakt een object in een <em>[JavaScript]</em>-proxy die elke LEESACTIE en elke SCHRIJFACTIE op een eigenschap onderschept; een <strong><em>[ChangeNotifier]</em></strong> <em>[Dart]</em> is een gewone klasse, en het is aan de ontwikkelaar om na elke wijziging die een nieuwe weergave moet activeren expliciet <strong><em>[notifyListeners()]</em></strong> aan te roepen. Dat vraagt meer handmatige discipline, in ruil voor een mechanisme dat niet op „magische” proxy&#x27;s steunt om het te begrijpen.</p>
+<h2 id="46-geen-aparte-templatetaal-voorwaardelijke-weergave-en-lijsten">4.6. <span style="color: #2e74b5">Geen aparte templatetaal: voorwaardelijke weergave en lijsten</span></h2>
+<p><strong><em>[v-if]/[v-else]</em></strong> en <strong><em>[v-for]</em></strong> (<em>[Vue.js]</em>), net als [@if]/<strong><em>[@for]</em></strong> aan de <em>[Angular]</em>-kant, of de ternaire operatoren <strong><em>&amp;&amp;</em></strong> en <strong><em>[.map(...)]</em></strong> aan de <em>[React]</em>-kant, worden in <em>[Flutter]</em> weer omgezet in <em>GEWONE [Dart]-expressies</em>, rechtstreeks binnen <strong><em>[build(...)]</em></strong>: een klassieke [Dart]-[if]/[else] voor een voorwaarde, en <strong><em>[.map((element) =&gt; Widget(...)).toList()]</em></strong> voor een lijst; hetzelfde concept als <strong><em>[.map(...)] aan</em></strong> de <em>[React]</em>-kant, omdat <em>[Flutter]</em>, net als <em>[React]</em>, geen aparte „templatetaal” kent die los staat van de programmeertaal zelf. De syntaxis <strong><em>[if (condition) ...[ WidgetA, WidgetB ]]</em></strong> („if collection”, bijvoorbeeld gebruikt in <strong><em>[lib/app.dart]</em></strong>, Hoofdstuk 4) voert deze logica een stap verder dan <em>[React]</em>: een VOORWAARDE die rechtstreeks in een letterlijke lijst van widgets wordt ingevoegd, zonder ternaire operator of tussenliggende functie.</p>
+<h2 id="47-dart-een-nauwe-verwant-van-typescript-niet-van-javascript">4.7. <span style="color: #2e74b5">Dart: een nauwe verwant van TypeScript, niet van JavaScript</span></h2>
+<p><em>[Dart]</em> was nooit bedoeld als alternatief voor <em>[TypeScript]</em> voor het web (in tegenstelling tot TypeScript, dat juist als superset van <em>[JavaScript]</em> is ontworpen): het is een zelfstandige taal, vanaf het begin STATISCH getypeerd (geen impliciete modus „[any]”), gecompileerd en nooit als zodanig geïnterpreteerd. Voor een ontwikkelaar die van <em>[TypeScript]</em> komt (zoals bij de drie eerdere varianten in deze cursus) is het meeste vrijwel rechtstreeks over te zetten: klassen, interfaces (<em>[Dart]</em> gebruikt <strong><em>[abstract class]</em></strong> of eenvoudige geïmplementeerde klassen, in plaats van een apart sleutelwoord <strong><em>[interface]</em></strong>), generics (<strong><em>[ServerResponse&lt;T&gt;]</em></strong>, zie Hoofdstuk 4), <strong><em>[async]/[await]</em></strong> op <strong><em>[Future&lt;T&gt;]</em></strong> (het EXACTE equivalent van [Promise&lt;T&gt;] in [TypeScript]) en een in het typesysteem ingebouwde controle op nullability (<strong><em>[String?]</em></strong> in plaats van een tekenreeks die altijd aanwezig is; het equivalent van de modus <strong><em>[strict]</em></strong> van <em>[TypeScript]</em>, maar afgedwongen door de taal zelf in plaats van door een compileroptie).</p>
+<p>Een opvallend verschil, dat u tegenkomt in elk bestand in het volgende hoofdstuk dat JSON decodeert (<strong><em>[core/models/appointment_models.dart]</em></strong>): <em>[TypeScript]</em> verwijdert zijn typen tijdens het compileren: een <strong><em>[interface]</em></strong> wordt alleen tijdens het compileren gecontroleerd, een gedecodeerd JSON-object wordt tijdens de uitvoering vervolgens ONGEWIJZIGD gebruikt (<strong><em>[JSON.parse(...) as ServerResponse&lt;T&gt;]</em></strong>, een eenvoudige belofte aan de compiler). <em>[Dart]</em>kent daarentegen zijn typen ook tijdens de uitvoering: [jsonDecode(...)] retourneert altijd dynamische typen (<strong><em>[Map&lt;String, dynamic&gt;]</em></strong>), die expliciet naar klasse-instanties moeten worden omgezet met een met de hand geschreven constructor <strong><em>[fromJson(...)]</em></strong>. Dat is in het begin uitgebreider, maar een ontbrekende sleutel of een sleutel van een onverwacht type veroorzaakt dan direct een duidelijke exception, in plaats van zich ongemerkt voort te planten.</p>
+<h2 id="48-een-eerste-minimaal-voorbeeld">4.8. <span style="color: #2e74b5">Een eerste minimaal voorbeeld</span></h2>
+<p>Hier is de kleinste <em>[Flutter]</em>-applicatie die iets op het scherm toont; vergelijk deze met [lib/main.dart]/<strong><em>[lib/app.dart]</em></strong> uit Hoofdstuk 4, die aanzienlijk meer functionaliteit bevatten maar zijn opgebouwd uit PRECIES dezelfde bouwstenen (<strong><em>[runApp(...)]</em></strong>, <strong><em>[MaterialApp]</em></strong> en een rootwidget).</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-0-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-0-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-0-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-0-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-0-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-0-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-0-10">10</a></span>
+<span class="normal"><a href="#__codelineno-0-11">11</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="k">import</span><span class="w"> </span><span class="s1">'package:flutter/material.dart'</span><span class="p">;</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a>
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="kt">void</span><span class="w"> </span><span class="n">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="w">  </span><span class="n">runApp</span><span class="p">(</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">MaterialApp</span><span class="p">(</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="w">      </span><span class="nl">home:</span><span class="w"> </span><span class="n">Scaffold</span><span class="p">(</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="w">        </span><span class="nl">body:</span><span class="w"> </span><span class="n">Center</span><span class="p">(</span><span class="nl">child:</span><span class="w"> </span><span class="n">Text</span><span class="p">(</span><span class="s1">'Hello, RdvMedecins!'</span><span class="p">)),</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="w">      </span><span class="p">),</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="w">    </span><span class="p">),</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="w">  </span><span class="p">);</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<p>Laten we deze code doornemen:</p>
+<ul>
+  <li>Regel 1: <i><b>[import &#x27;package:flutter/material.dart&#x27;;] </b></i>is het equivalent van <i><b>[import { ... } from &#x27;vue&#x27;]</b></i>: <i><b>[material.dart] </b></i>bevat alle „Material Design”-widgets (<i>[Google]</i>) die in dit document worden gebruikt: knoppen, tekstvelden, app-balken enzovoort. <i>[Flutter] </i>biedt ook een set <i><b>[Cupertino]</b></i>-widgets (in de stijl van <i>[iOS]</i>), die in deze cursus niet worden gebruikt, voor wie deze stijl op mobiele apparaten (<i>[Apple]</i>) verkiest.
+  </li>
+  <li>Regel 3: <i><b>[void main() {] </b></i>is het startpunt van een [Dart]-programma, PRECIES zoals dat van een <i>[C]/[Java]</i>-programma; <i>[Flutter] </i>kent geen equivalent van <i>de [HTML] </i>van een webpagina, waarin vervolgens een script <i>[main.ts]</i> zou worden ingebed: de applicatie start HIER rechtstreeks.
+  </li>
+  <li>Regel 4: <i><b>[runApp(...)] </b></i>start de renderengine van <i>[Flutter] </i>en geeft deze de rootwidget die moet worden weergegeven; het equivalent van <i><b>[createApp(App).mount(&#x27;#app&#x27;)] </b></i>aan de [Vue.js]-kant ([src/main.ts]), in één aanroep in plaats van twee.
+  </li>
+  <li>Regels 5-9: <i><b>[MaterialApp(home: Scaffold(body: Center(...)))] </b></i>is een BOOM van geneste widgets, elk met een eigen verantwoordelijkheid: <i><b>[MaterialApp] </b></i>configureert het thema en de navigatie; <i><b>[Scaffold] </b></i>levert de standaardstructuur van een scherm (gebied voor een applicatiebalk, inhoudsgebied enzovoort); <i><b>[Center] </b></i>centreert zijn kind; <i><b>[Text] </b></i>toont een tekenreeks. Geen van deze vier widgets is een speciaal geval van de taal: het zijn gewoon [Dart]-KLASSEN, zoals die welke deze cursus in het volgende hoofdstuk zelf schrijft.
+  </li>
+</ul>
+
+<h2 id="49-samenvatting-angular-react-vuejs-flutter">4.9. <span style="color: #2e74b5">Samenvatting: Angular -&gt; React -&gt; Vue.js -&gt; Flutter</span></h2>
+<p>Zie ook het bestand <strong><em>[README.md]</em></strong> dat bij de code van dit hoofdstuk is meegeleverd voor de volledige versie.</p>
+<ul>
+  <li>[Angular]-componenten / [.vue]-bestanden / <i>[.tsx]</i>-bestanden → <i>[Widgets] [Dart]</i> (<i><b>[StatelessWidget]/[StatefulWidget]</b></i>)
+  </li>
+  <li><i><b>[signal()]/[ref()]/[useState()] </b></i>→ veranderlijke velden + <i><b>[setState(...)] </b></i>(lokale toestand), <i><b>[ChangeNotifier] </b></i>(gedeelde toestand)
+  </li>
+  <li><i>[input()]/[output()]</i>, <i><b>[defineProps]/[defineEmits]</b></i>, functie-eigenschappen → constructorparameters (invoer), als parameters doorgegeven functies (uitvoer)
+  </li>
+  <li>injecteerbare/composable services + <i>[provide]/[inject]/[Context] </i>→ serviceklassen + pakket <i><b>[provider]</b></i>
+  </li>
+  <li>aparte template <i>[Angular]</i>, <i><b>[&lt;template&gt;]</b></i>, <i>[Vue.js]</i>, <i>[JSX], [React] </i>→ methode <i><b>[build(BuildContext)] </b></i>(puur Dart)
+  </li>
+  <li><i><b>[HttpClient]/[fetch] </b></i>→ pakket <i><b>[http]</b></i>
+  </li>
+  <li><i>[localStorage] </i>→ <i><b>[shared_preferences]</b></i>
+  </li>
+  <li>Geen router (applicatie met één scherm, in alle 5 varianten van deze cursus)
+  </li>
+</ul>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner">
+
+      <div>
+        <a href="https://stahe.github.io" target="_blank">
+          https://stahe.github.io
+        </a>
+        <br>
+        Deze tutorial, geschreven door de AI <strong>Claude</strong> van Anthropic en nagelezen door <strong>Serge Tahé</strong>, wordt aan het publiek ter beschikking gesteld onder de voorwaarden van de licentie
+        <em>Creative Commons Naamsvermelding – Niet-commercieel –
+        Gelijk delen 3.0 Unported</em>.
+
+      </div>
+
+    </div>
+  </div>
+
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.sections", "navigation.indexes", "navigation.expand", "toc.integrate", "navigation.top"], "search": "assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="javascripts/focus.js"></script>
+      
+    
+  </body>
+</html>
